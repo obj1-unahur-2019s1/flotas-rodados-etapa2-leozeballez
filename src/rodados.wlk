@@ -28,9 +28,6 @@ class AutoEspecial {
 	var property color
 }
 
-
-
-
 object trafic {
 	var property interior = interiorComodo
 	var property motor = motorPulenta
