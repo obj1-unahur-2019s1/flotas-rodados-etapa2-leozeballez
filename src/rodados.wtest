@@ -1,14 +1,26 @@
 import rodados.*
 import dependencia.*
+import pedidos.*
 
 describe "Flota de rodados" {
 	const cachito = new Corsa(color = "rojo")
 	
 	test "Dependencia cultura" {
 		const cultura = new Dependencia(empleados = 31)
+		const ped = new Pedido(distanciaARecorrer = 960,
+		tiempoMaximo = 8,
+		//tiempoMaximo = 6,
+		pasajeros = 6
+		//pasajeros = 4
+		, coloresIncompatibles = #{"azul", "negro"} )
+		//, coloresIncompatibles = #{"azul", "negro", "rojo"} )
 		cultura.agregarAFlota(cachito)
+		cultura.agregarPedido(ped)
 		
-		// completar
+		assert.equals( 120, ped.velocidadRequerida() )
+		//assert.equals( true, ped.satisfacePedido(cachito) )
+		//assert.equals( ped, cultura.pedidosNoSatisfechos() )
+		assert.equals( true, cultura.colorIncompatible("azul") )
 	}
 	
 	test "Dependencia deportes" {
@@ -29,15 +41,5 @@ describe "Flota de rodados" {
 		assert.equals(true, deportes.esGrande())
 		assert.equals(25, deportes.capacidadFaltante())	
 	}
+	
 }
-
-
-
-
-
-
-
-
-
-
-

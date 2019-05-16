@@ -58,9 +58,3 @@ object motorPulenta {
 	method velocidadMaxima() = 130
 	method peso() = 800
 }
-
-
-
-
-
-
